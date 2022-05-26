@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script type="text/javascript">
+
+        var title="ES6";
+        console.log(typeof title[Symbol.iterator]);
+
+        var iteratIt=title[Symbol.iterator]();
+        console.log(iteratIt.next());
+        console.log(iteratIt.next());
+        console.log(iteratIt.next());
+        console.log(iteratIt.next());
+
+        function tableReady(arr){
+            var nextIndex=0;
+            return {
+                next(){
+                    if (nextIndex<arr.length) {
+                        return {value:arr.shift(),done:false}
+                    }
+                    else {
+                        return {done:true}
+                    }
+                }
+            }
+        }
+
+        var waitingList=["Sarah","Heather","Anna","Meagan"];
+        var iterateList=tableReady(waitingList);
+
+        console.log(`${iterateList.next().value}, your table is ready`);
+        console.log(`${iterateList.next().value}, your table is ready`);
+        console.log(`${iterateList.next().value}, your table is ready`);
+        console.log(`${iterateList.next().value}, your table is ready`);
+        console.log(`Is this finished?, ${iterateList.next().done}`);
+
+         
+    </script>
+    
+    <title>Iterators</title>
+</head>
+<body>
+    
+</body>
+</html>

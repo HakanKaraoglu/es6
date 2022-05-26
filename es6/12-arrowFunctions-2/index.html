@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script type="text/javascript">
+
+       var person={
+           first:"Doug",
+           actions:["bike","hike","ski","surf"],
+           printActions(){
+               this.actions.forEach(action=>{
+                   /*Solution 1 
+                   //var _this=this;
+                   //var str=_this.first+ " likes to "+action;
+                   */
+                    
+                   /*Solution 2 with Bind*/
+                   var str=this.first+ " likes to "+action;
+                   console.log(str);
+               })
+           }
+       };
+
+       person.printActions();
+       
+    </script>
+    
+    <title>Arrow Functions and 'this'</title>
+</head>
+<body>
+    
+</body>
+</html>
